@@ -6,8 +6,8 @@ seaborn
 scikit-learn
 Pillow
 seaborn
-plotly.express
+plotly
 pandas
 streamlit
-matplotlib.pyplot
+matplotlib
 joblib
