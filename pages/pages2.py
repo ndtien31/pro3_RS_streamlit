@@ -3,16 +3,13 @@ import pandas as pd
 import os
 from datetime import datetime
 from PIL import Image
-import base64
 
-# Tên file lưu trữ dữ liệu
+# Cấu hình thư mục
 DATA_FILE = "products.csv"
 IMAGE_FOLDER = "product_images"
-
-# Tạo thư mục lưu ảnh nếu chưa tồn tại
 os.makedirs(IMAGE_FOLDER, exist_ok=True)
 
-# Khởi tạo dữ liệu nếu file chưa tồn tại
+# Khởi tạo dữ liệu
 def init_data():
     if not os.path.exists(DATA_FILE):
         sample_data = {
@@ -32,11 +29,13 @@ def init_data():
         df = pd.DataFrame(sample_data)
         df.to_csv(DATA_FILE, index=False)
 
-# Đọc dữ liệu từ file
+# Đọc dữ liệu
 def load_data():
-    return pd.read_csv(DATA_FILE)
+    df = pd.read_csv(DATA_FILE)
+    df['Ảnh'] = df['Ảnh'].fillna('').astype(str)  # Đảm bảo cột Ảnh là string
+    return df
 
-# Lưu dữ liệu vào file
+# Lưu dữ liệu
 def save_data(df):
     df.to_csv(DATA_FILE, index=False)
 
@@ -44,7 +43,7 @@ def save_data(df):
 def generate_id(df):
     return df["ID"].max() + 1 if not df.empty else 1
 
-# Lưu ảnh và trả về tên file
+# Xử lý ảnh
 def save_uploaded_image(uploaded_file, product_id):
     if uploaded_file is not None:
         file_ext = os.path.splitext(uploaded_file.name)[1]
@@ -58,13 +57,18 @@ def save_uploaded_image(uploaded_file, product_id):
 
 # Hiển thị ảnh
 def display_image(image_path, width=200):
-    if image_path and os.path.exists(os.path.join(IMAGE_FOLDER, image_path)):
-        img = Image.open(os.path.join(IMAGE_FOLDER, image_path))
-        st.image(img, width=width)
-    else:
-        st.image("https://via.placeholder.com/200?text=No+Image", width=width)
+    try:
+        image_path = str(image_path) if image_path is not None else ''
+        if image_path.strip() and os.path.exists(os.path.join(IMAGE_FOLDER, image_path)):
+            img = Image.open(os.path.join(IMAGE_FOLDER, image_path))
+            st.image(img, width=width)
+        else:
+            st.image("https://via.placeholder.com/200?text=No+Image", width=width)
+    except Exception as e:
+        st.error(f"Lỗi khi hiển thị ảnh: {e}")
+        st.image("https://via.placeholder.com/200?text=Error", width=width)
 
-# Hiển thị sản phẩm dạng grid
+# Hiển thị sản phẩm dạng lưới
 def display_products_grid(df):
     cols_per_row = 3
     cols = st.columns(cols_per_row)
@@ -103,14 +107,14 @@ def display_product_detail(product_id, df):
 
 # Giao diện chính
 def main():
+    st.set_page_config(page_title="Quản lý sản phẩm", page_icon="🛍️", layout="wide")
     st.title("🛍️ Cửa hàng Sản phẩm")
-    st.write("Ứng dụng quản lý sản phẩm với giao diện thương mại điện tử")
-
+    
     # Khởi tạo dữ liệu
     init_data()
     df = load_data()
 
-    # Sidebar cho các chức năng
+    # Sidebar
     st.sidebar.title("Chức năng")
     menu_options = [
         "Trang chủ - Xem sản phẩm",
@@ -121,21 +125,21 @@ def main():
     ]
     menu = st.sidebar.radio("Menu", menu_options)
 
-    # Xử lý xem chi tiết sản phẩm
+    # Xử lý xem chi tiết
     if 'view_product' in st.session_state:
         display_product_detail(st.session_state['view_product'], df)
         return
 
-    # Trang chủ - Hiển thị sản phẩm
+    # Trang chủ
     if menu == "Trang chủ - Xem sản phẩm":
         st.subheader("Danh sách sản phẩm")
         display_products_grid(df)
 
-    # Thêm sản phẩm mới
+    # Thêm sản phẩm
     elif menu == "Thêm sản phẩm":
         st.subheader("Thêm sản phẩm mới")
         
-        with st.form("add_form"):
+        with st.form("add_form", clear_on_submit=True):
             col1, col2 = st.columns(2)
             with col1:
                 name = st.text_input("Tên sản phẩm*")
@@ -252,7 +256,7 @@ def main():
             st.success("Đã xóa sản phẩm thành công!")
             st.experimental_rerun()
 
-    # Tìm kiếm sản phẩm
+    # Tìm kiếm
     elif menu == "Tìm kiếm sản phẩm":
         st.subheader("Tìm kiếm sản phẩm")
         
@@ -261,11 +265,11 @@ def main():
         
         if search_term:
             if search_by == "Tên sản phẩm":
-                result = df[df["Tên sản phẩm"].str.contains(search_term, case=False)]
+                result = df[df["Tên sản phẩm"].str.contains(search_term, case=False, na=False)]
             elif search_by == "Loại":
-                result = df[df["Loại"].str.contains(search_term, case=False)]
+                result = df[df["Loại"].str.contains(search_term, case=False, na=False)]
             else:
-                result = df[df["Mô tả"].str.contains(search_term, case=False)]
+                result = df[df["Mô tả"].str.contains(search_term, case=False, na=False)]
             
             st.write(f"Kết quả tìm kiếm ({len(result)} sản phẩm):")
             display_products_grid(result)
