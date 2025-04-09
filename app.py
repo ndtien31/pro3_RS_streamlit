@@ -13,7 +13,7 @@ st.title("Chào Mừng Đến Với Ứng Dụng SEGMENT CUSTOMER")
 st.image("https://via.placeholder.com/800x200?text=Welcome+Banner", use_column_width=True)
 
 st.markdown("""
-## Giới Thiệu MYSHOPE.
+## Giới Thiệu SEGMENT CUSTOMER.
 
 ## Hướng Dẫn Sử Dụng
 1. Chọn trang bạn muốn từ thanh điều hướng bên trái
