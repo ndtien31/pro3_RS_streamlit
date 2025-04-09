@@ -21,6 +21,7 @@ st.markdown("""
 3. Có thể quay lại trang chủ bất cứ lúc nào
 """)
 
+
 # Thêm footer  git init
 st.divider()
 st.caption("© 2025 Bản quyền thuộc về tác giả.")
