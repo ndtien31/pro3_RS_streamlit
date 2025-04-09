@@ -10,7 +10,7 @@ st.set_page_config(
 
 # Nội dung trang chủ
 st.title("Chào Mừng Đến Với Ứng Dụng SEGMENT CUSTOMER")
-st.image("images_ml/image_tt.png", use_column_width=True)
+st.image("image_tt.png", use_column_width=True)
 
 st.markdown("""
 ## Giới Thiệu SEGMENT CUSTOMER.
