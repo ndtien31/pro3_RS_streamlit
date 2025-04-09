@@ -10,14 +10,14 @@ st.set_page_config(
 
 # Nội dung trang chủ
 st.title("Chào Mừng Đến Với Ứng Dụng SEGMENT CUSTOMER")
-st.image("https://via.placeholder.com/800x200?text=Welcome+Banner", use_column_width=True)
+st.image("images_ml\image_tt.png", use_column_width=True)
 
 st.markdown("""
 ## Giới Thiệu SEGMENT CUSTOMER.
 
 ## Hướng Dẫn Sử Dụng
-1. Chọn trang bạn muốn từ thanh điều hướng bên trái
-2. Mỗi trang có chức năng riêng
+1. Chọn chức năng bạn muốn từ thanh điều hướng bên trái
+2. ứng dụng có 2 phần: Machine learning và Machine learning Pyspark
 3. Có thể quay lại trang chủ bất cứ lúc nào
 """)
 

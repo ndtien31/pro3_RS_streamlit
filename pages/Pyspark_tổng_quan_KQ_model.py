@@ -195,7 +195,7 @@ st.caption("""
 **Hướng dẫn sử dụng:**
 - Nhấn vào từng nhóm khách hàng để xem chiến lược tiếp thị cụ thể
 - Tải báo cáo để phân tích chi tiết hơn
-- Dữ liệu cập nhật đến tháng 6/2024
+
 """)
 # Đường dẫn tới folder chứa ảnh
 IMAGE_FOLDER = "pyspark"  # đổi lại nếu bạn dùng folder khác
