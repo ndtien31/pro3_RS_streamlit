@@ -207,6 +207,7 @@ st.title("CÁC BIỂU ĐỒ:")
 if os.path.exists(IMAGE_FOLDER):
     image_files = [f for f in os.listdir(IMAGE_FOLDER)
                    if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
+    image_files.sort()
 
     if image_files:
         for img_file in image_files:
