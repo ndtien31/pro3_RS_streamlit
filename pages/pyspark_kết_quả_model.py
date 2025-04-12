@@ -30,14 +30,14 @@ segments = {
         "description": "Khách chi tiêu cao và mua thường xuyên"
     },
     2.0: {
-        "label": "KHÁCH BÌNH THƯỜNG/MUA THEO MÙA",
+        "label": "KHÁCH BÌNH THƯỜNG",
         "days": 279,
         "orders": 8,
         "spending": 66,
         "count": 1008,
         "color": "#2196F3",
         "icon": "🌦️",
-        "description": "Khách chỉ mua theo lịch"
+        "description": "Khách chỉ mua vào dịp đặc biệt"
     },
     3.0: {
         "label": "KHÁCH NGỪNG MUA",
@@ -149,19 +149,19 @@ strategies = {
         "🚚 Ưu tiên giao hàng trong 2 giờ",
         "🎁 Quà tặng đặc biệt dịp lễ tết"
     ],
-    "KHÁCH THƯỜNG XUYÊN/MỚI": [
+    "KHÁCH THƯỜNG XUYÊN": [
         "🔄 Chương trình tích điểm: 10 điểm = 1kg rau củ miễn phí",
         "📧 Gửi công thức nấu ăn hàng tuần",
         "🎁 Voucher $10 dịp sinh nhật",
         "📱 Ưu đãi đặc biệt khi đặt hàng qua App"
     ],
-    "KHÁCH BÌNH THƯỜNG": [
+    "KHÁCH MUA THEO MÙA": [
         "🌧️ Ưu đãi theo mùa: Giảm 20% hải sản mùa mưa",
         "🍺 Combo bia + đồ nhậu cuối tuần",
         "📅 Nhắc lịch đặt hàng trước mùa cao điểm",
         "🎄 Combo đặc biệt dịp lễ"
     ],
-    "KHÁCH NGỪNG MUA/RỜI BỎ": [
+    "KHÁCH NGỪNG MUA": [
         "📞 Khảo sát qua điện thoại (tặng voucher $5)",
         "🔥 Ưu đãi comeback: Giảm 30% đơn đầu tiên",
         "💌 Email nhắc nhở với ưu đãi đặc biệt",
