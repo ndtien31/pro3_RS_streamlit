@@ -53,7 +53,7 @@ if os.path.exists(IMAGE_FOLDER):
             img_path = os.path.join(IMAGE_FOLDER, img_file)
             image = Image.open(img_path)
             st.markdown(f"### 📁 {img_file}")
-            st.image(image, use_column_width=True)
+            st.image(image, use_container_width=True)
     else:
         st.warning("Không tìm thấy file ảnh trong thư mục.")
 else:
