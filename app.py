@@ -21,11 +21,12 @@ st.markdown("""
 3. Có thể quay lại trang chủ bất cứ lúc nào
 """)
 st.markdown("""
-###- Khóa học:               Đồ án Tốt nghiệp Data Science
-###- Mã lớp:                   DL07_302T37_ON            
+### - Khóa học:               Đồ án Tốt nghiệp Data Science
+### - Mã lớp:                   DL07_302T37_ON            
 ## Thành viên nhóm:
 1. Ngô Duy Tiến
 2. Phạm Quốc Bình
+
 Ngày BC: 12/04/2025            
 """)
 # Thêm footer  git init
