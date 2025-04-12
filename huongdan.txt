@@ -1,0 +1,95 @@
+Kết nối dự án VSCode với GitHub
+Để kết nối dự án trong Visual Studio Code (VSCode) với GitHub, bạn có thể làm theo các bước sau:
+
+Cách 1: Sử dụng tính năng tích hợp của VSCode
+Cài đặt Git:
+
+Đảm bảo bạn đã cài đặt Git trên máy tính
+
+Tải về từ git-scm.com
+
+Cài đặt GitHub Extension trong VSCode:
+
+Mở VSCode
+
+Vào Extensions (Ctrl+Shift+X)
+
+Tìm "GitHub Pull Requests and Issues" và cài đặt
+
+Đăng nhập GitHub trong VSCode:
+
+Mở Command Palette (Ctrl+Shift+P)
+
+Gõ "GitHub: Sign In" và chọn
+
+Làm theo hướng dẫn để đăng nhập
+
+Khởi tạo repository Git:
+
+Mở thư mục dự án trong VSCode
+
+Mở Terminal (Ctrl+`)
+
+Chạy lệnh: git init
+
+Kết nối với GitHub:
+
+Tạo repository mới trên GitHub
+
+Trong VSCode, mở Command Palette (Ctrl+Shift+P)
+
+Gõ "Git: Add Remote"
+
+Nhập URL repository GitHub (ví dụ: https://github.com/username/repo.git)
+
+Đặt tên remote (thường là "origin")
+
+Commit và Push:
+
+Thực hiện thay đổi
+
+Vào tab Source Control (biểu tượng Git ở bên trái)
+
+Nhập message commit và nhấn Commit
+
+Nhấn "Push" để đẩy lên GitHub
+
+Cách 2: Sử dụng dòng lệnh
+Khởi tạo Git repository:
+
+bash
+Copy
+git init
+Thêm tất cả files:
+
+bash
+Copy
+git add .
+Commit changes:
+
+bash
+Copy
+git commit -m "Initial commit"
+Kết nối với GitHub:
+
+bash
+Copy
+git remote add origin https://github.com/username/repo.git
+Push lên GitHub:
+
+bash
+Copy
+git push -u origin master
+Mẹo hữu ích
+Bạn có thể sử dụng SSH thay vì HTTPS để kết nối an toàn hơn
+
+Kiểm tra trạng thái Git bằng biểu tượng Git ở thanh trạng thái dưới cùng VSCode
+
+Sử dụng .gitignore file để bỏ qua các file không cần đẩy lên GitHub
+
+Nếu bạn gặp lỗi xác thực, hãy kiểm tra lại token GitHub hoặc cài đặt SSH key.
+
+
+
+
+các lần sau thực hiện commit  và syn

@@ -9,9 +9,9 @@ st.write("Phân tích dựa trên 3,898 khách hàng:")
 # Định nghĩa các nhóm với tên gọi trực quan
 cluster_data = {
     2: {"name": "KHÁCH VIP (Top 12%)", "desc": "🔸 Mua 19 đơn/gần nhất 89 ngày 🔸 Chi $189/đơn", "action": "🎖️ Tặng voucher mua hàng cao cấp"},
-    0: {"name": "KHÁCH QUEN", "desc": "🔸 Mua 12 đơn/gần nhất 124 ngày 🔸 Chi $108/đơn", "action": "🛒 Combo tích điểm 'Mua 9 tặng 1' cho rau củ"},
-    1: {"name": "KHÁCH MỚI TIỀM NĂNG", "desc": "🔸 Mua 6 đơn/gần nhất 127 ngày 🔸 Chi $50/đơn", "action": "🌱 Gói chào mừng giảm 30% đơn đầu"},
-    3: {"name": "KHÁCH NGỪNG MUA", "desc": "🔸 Không mua 433 ngày 🔸 Chỉ 5 đơn", "action": "🚫 Khảo sát qua SMS kèm quà tặng"}
+    0: {"name": "KHÁCH BÌNH THƯỜNG/QUEN", "desc": "🔸 Mua 12 đơn/gần nhất 124 ngày 🔸 Chi $108/đơn", "action": "🛒 Combo tích điểm 'Mua 9 tặng 1' cho rau củ"},
+    1: {"name": "KHÁCH HÀNG MỚI", "desc": "🔸 Mua 6 đơn/gần nhất 127 ngày 🔸 Chi $50/đơn", "action": "🌱 Gói chào mừng giảm 30% đơn đầu"},
+    3: {"name": "KHÁCH NGỪNG MUA RỜI BỎ", "desc": "🔸 Không mua 433 ngày 🔸 Chỉ 5 đơn", "action": "🚫 Khảo sát qua SMS kèm quà tặng"}
 }
 
 # Hiển thị metrics
