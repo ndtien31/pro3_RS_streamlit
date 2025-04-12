@@ -17,7 +17,7 @@ segments = {
         "count": 1473,
         "color": "#4CAF50",
         "icon": "🛒",
-        "description": "Khách mua đều đặn nhưng chi tiêu trung bình"
+        "description": "Khách mua đều đặn nhưng chi tiêu trung bình, cũng có thể khách mới"
     },
     1.0: {
         "label": "KHÁCH VIP",
@@ -149,13 +149,13 @@ strategies = {
         "🚚 Ưu tiên giao hàng trong 2 giờ",
         "🎁 Quà tặng đặc biệt dịp lễ tết"
     ],
-    "KHÁCH THƯỜNG XUYÊN": [
+    "KHÁCH MỚI THƯỜNG XUYÊN": [
         "🔄 Chương trình tích điểm: 10 điểm = 1kg rau củ miễn phí",
         "📧 Gửi công thức nấu ăn hàng tuần",
         "🎁 Voucher $10 dịp sinh nhật",
         "📱 Ưu đãi đặc biệt khi đặt hàng qua App"
     ],
-    "KHÁCH MUA THEO MÙA": [
+    "KHÁCH BÌNH THƯỜNG": [
         "🌧️ Ưu đãi theo mùa: Giảm 20% hải sản mùa mưa",
         "🍺 Combo bia + đồ nhậu cuối tuần",
         "📅 Nhắc lịch đặt hàng trước mùa cao điểm",
