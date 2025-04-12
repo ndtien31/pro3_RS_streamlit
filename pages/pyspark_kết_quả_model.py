@@ -10,7 +10,7 @@ import plotly.express as px
 # ====================
 segments = {
     0.0: {
-        "label": "KHÁCH MỚI/THƯỜNG XUYÊN",
+        "label": "KHÁCH MỚI THƯỜNG XUYÊN",
         "days": 82,
         "orders": 9,
         "spending": 68,
